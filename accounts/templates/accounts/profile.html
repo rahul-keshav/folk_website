@@ -1,0 +1,25 @@
+{% extends 'accounts/base.html'%}
+
+{%block title%}<title>profile</title>{% endblock %}
+
+{% block head %}
+<h1>profile</h1>
+{% endblock %}
+
+{% block body %}
+
+<p>USERNAME={{user}}</p>
+
+<p>NAME={{user.first_name}} {{user.last_name}}</p>
+
+<p>EMAIL={{user.email}}</p>
+
+<p>DISCRIPTION:{{user.useraccount.discription}}</p>
+
+<p>And i m from {{user.useraccount.city}} .</p>
+
+<p>You can contact me on {{user.useraccount.contact_no}},& on my EmailId</p>
+{%if user.useraccount.image%}
+<p><img src="{{user.useraccount.image.url}}" width="244px"></p>
+{%endif%}
+{% endblock %}
